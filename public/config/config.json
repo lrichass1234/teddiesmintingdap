@@ -1,0 +1,19 @@
+{
+  "CONTRACT_ADDRESS": "0x3D2EaFD67f0a64B41832B8629b02Ba0d2213D9F8",
+  "SCAN_LINK": "https://etherscan.io/address/0x3d2eafd67f0a64b41832b8629b02ba0d2213d9f8",
+  "NETWORK": {
+    "NAME": "Ethereum",
+    "SYMBOL": "ETH",
+    "ID": 1
+  },
+  "NFT_NAME": "TeddiesFriendsNFT",
+  "SYMBOL": "TEDDIESFRIENDS",
+  "MAX_SUPPLY": 3000,
+  "WEI_COST": 0,
+  "DISPLAY_COST": 0,
+  "GAS_LIMIT": 285000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/teddiesfriendsnft",
+  "TWITTER_LINK": "https://twitter.com/TeddyFriendNFT",
+  "SHOW_BACKGROUND": true
+}
