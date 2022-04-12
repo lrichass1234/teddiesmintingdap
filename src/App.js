@@ -300,7 +300,7 @@ function App() {
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                   First 1500 free mint.
-                  Excluding gas fees.
+                  Excluding gas fees. Max mint per transaction 20.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
