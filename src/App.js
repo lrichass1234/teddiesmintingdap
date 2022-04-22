@@ -111,7 +111,7 @@ function App() {
     },
     NFT_NAME: "",
     SYMBOL: "",
-    MAX_SUPPLY: 1,
+    maxSupply: 1,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -270,7 +270,7 @@ function App() {
               </StyledButton>
             </span>
             <s.SpacerSmall />
-            {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+            {Number(data.totalSupply) >= CONFIG.maxSupply ? (
               <>
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
@@ -300,7 +300,7 @@ function App() {
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
                   First 1500 free mint.
-                  Max mint 20 per transaction.
+                  Max mint 10 per transaction.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||

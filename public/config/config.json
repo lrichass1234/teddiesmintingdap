@@ -8,7 +8,7 @@
   },
   "NFT_NAME": "TeddiesFriends",
   "SYMBOL": "TEDDIES FRIENDS",
-  "MAX_SUPPLY": 3000,
+  "maxSupply": 3000,
   "WEI_COST": 0,
   "DISPLAY_COST": 0,
   "GAS_LIMIT": 240000,
