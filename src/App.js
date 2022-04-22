@@ -100,7 +100,7 @@ function App() {
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
   const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [_mintAmount, setMintAmount] = useState(1);
+  const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
@@ -111,27 +111,26 @@ function App() {
     },
     NFT_NAME: "",
     SYMBOL: "",
-    maxSupply: 1,
+    MAX_SUPPLY: 1,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
-    TWITTER_LINK: "",
     SHOW_BACKGROUND: false,
   });
 
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * _mintAmount);
-    let totalGasLimit = String(gasLimit * _mintAmount);
+    let totalCostWei = String(cost * mintAmount);
+    let totalGasLimit = String(gasLimit * mintAmount);
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .mint(blockchain.account, _mintAmount)
+      .mint(blockchain.account, mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -154,19 +153,19 @@ function App() {
   };
 
   const decrementMintAmount = () => {
-    let _newmaxMintAmount = _mintAmount - 1;
-    if (_newmaxMintAmount < 1) {
-      _newmaxMintAmount = 1;
+    let newMintAmount = mintAmount - 1;
+    if (newMintAmount < 1) {
+      newMintAmount = 1;
     }
-    setMintAmount(_newmaxMintAmount);
+    setMintAmount(newMintAmount);
   };
 
   const incrementMintAmount = () => {
-    let _newmaxMintAmount = _mintAmount + 1;
-    if (_newmaxMintAmount > 10) {
-      _newmaxMintAmount = 10;
+    let newMintAmount = mintAmount + 1;
+    if (newMintAmount > 50) {
+      newMintAmount = 50;
     }
-    setMintAmount(_newmaxMintAmount);
+    setMintAmount(newMintAmount);
   };
 
   const getData = () => {
@@ -250,13 +249,13 @@ function App() {
             >
               <StyledButton
                 onClick={(e) => {
-                  window.open(CONFIG.TWITTER_LINK, "_blank");
+                  window.open("/config/roadmap.pdf", "_blank");
                 }}
                 style={{
                   margin: "5px",
                 }}
               >
-                Twitter
+                Roadmap
               </StyledButton>
               <StyledButton
                 style={{
@@ -270,7 +269,7 @@ function App() {
               </StyledButton>
             </span>
             <s.SpacerSmall />
-            {Number(data.totalSupply) >= CONFIG.maxSupply ? (
+            {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
@@ -299,8 +298,7 @@ function App() {
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  First 1500 free mint.
-                  Max mint 10 per transaction.
+                  Excluding gas fees.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -367,7 +365,7 @@ function App() {
                           color: "var(--accent-text)",
                         }}
                       >
-                        {_mintAmount}
+                        {mintAmount}
                       </s.TextDescription>
                       <s.SpacerMedium />
                       <StyledRoundButton
