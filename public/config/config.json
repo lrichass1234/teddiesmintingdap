@@ -6,8 +6,8 @@
     "SYMBOL": "ETH",
     "ID": 1
   },
-  "NFT_NAME": "TeddiesFriendsNFT",
-  "SYMBOL": "TEDDIESFRIENDS",
+  "NFT_NAME": "TeddiesFriends",
+  "SYMBOL": "TEDDIES FRIENDS",
   "MAX_SUPPLY": 3000,
   "WEI_COST": 0,
   "DISPLAY_COST": 0,
