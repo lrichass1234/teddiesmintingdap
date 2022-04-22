@@ -298,6 +298,7 @@ function App() {
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
+                  First 1500 Free Mint and 1500 for 0.009eth
                   Excluding gas fees.
                 </s.TextDescription>
                 <s.SpacerSmall />
