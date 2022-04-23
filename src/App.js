@@ -115,6 +115,7 @@ function App() {
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
+    GAS_PERNFT: 0,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
@@ -123,8 +124,9 @@ function App() {
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
+    Let gaspernfts = CONFIG.GAS_PERNFT;
     let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
+    let totalGasLimit = String(gasLimit +(gaspernfts * mintAmount));
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
